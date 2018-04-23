@@ -55,11 +55,35 @@
 #include "Random.h"
 #include "PLL.h"
 #include "ADC.h"
+#include "Timer0.h"
+#include "ISR.h"
+#include "Portinit.h"
+#include "Player.h"
 
 
 void DisableInterrupts(void); // Disable interrupts
 void EnableInterrupts(void);  // Enable interrupts
 void Delay100ms(uint32_t count); // time delay in 0.1 seconds
+void PortF_Init(void); // initialize portf
+void Systick_Init(void); // initialize systick
+void SysTick_Handler (void);
+
+
+//void (*animationpt)(void) = &projectile;
+
+
+uint8_t flag = 0;
+uint32_t playerx;
+int8_t alienflag = 0;
+int16_t convertedmissilex = 0;
+int16_t convertedmissiley = 0;
+int8_t missileflag = 0;
+
+
+
+
+
+
 
 
 // *************************** Images ***************************
@@ -184,42 +208,83 @@ const unsigned short Bunker0[] = {
 
 };
 
+const unsigned short Missile0[] = {
+ 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0xFFFF, 0x0000, 0x0000, 0xFFFF, 0x0000, 0x0000, 0x0000, 0x0000, 0xFFFF, 0x0000, 0x0000,
+ 0x0000, 0x0000, 0xFFFF, 0x0000, 0x0000, 0xFFFF, 0x0000, 0x0000, 0xFFFF, 0x0000, 0x0000, 0x0000, 0x0000, 0xFFFF, 0x0000, 0x0000,
+ 0x0000, 0x0000, 0x0000, 0x0000,
+
+};
+
 
 
 // *************************** Capture image dimensions out of BMP**********
 
 int main(void){
-  PLL_Init(Bus80MHz);       // Bus clock is 80 MHz 
+	DisableInterrupts();
+	PLL_Init(Bus80MHz);       // Bus clock is 80 MHz 
   Random_Init(1);
-
+	
+	ADC_Init();    // initialize to sample ADC
+  PortF_Init();
+  PortE_Init();
+	Systick_Init();
   Output_Init();
-  ST7735_FillScreen(0x0000);            // set screen to black
-  
-  ST7735_DrawBitmap(52, 159, PlayerShip0, 18,8); // player ship middle bottom
-  ST7735_DrawBitmap(53, 151, Bunker0, 18,5);
+	//Timer0_Init(*animationpt, 13333333);
+	ST7735_InitR(INITR_REDTAB);
+	GPIO_PORTE_DATA_R = 0x00;
+	EnableInterrupts();
+	
+	
+	while (1) {
+	
+	while (flag == 1)
+	{
+		ST7735_FillScreen(0x0000);            // set screen to black
+		Aliens();
+		Player1();
+		if (missileflag == 1)
+		{
+			Missile();
+			
+			
+		}
+	}
+}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	//  ST7735_DrawBitmap(53, 151, Bunker0, 18,5);
 
-  ST7735_DrawBitmap(0, 9, SmallEnemy10pointA, 16,10);
-  ST7735_DrawBitmap(20,9, SmallEnemy10pointB, 16,10);
-  ST7735_DrawBitmap(40, 9, SmallEnemy20pointA, 16,10);
-  ST7735_DrawBitmap(60, 9, SmallEnemy20pointB, 16,10);
-  ST7735_DrawBitmap(80, 9, SmallEnemy30pointA, 16,10);
-  ST7735_DrawBitmap(100, 9, SmallEnemy30pointB, 16,10);
+//  ST7735_DrawBitmap(0, 9, SmallEnemy10pointA, 16,10);
+//  ST7735_DrawBitmap(20,9, SmallEnemy10pointB, 16,10);
+//  ST7735_DrawBitmap(40, 9, SmallEnemy20pointA, 16,10);
+//  ST7735_DrawBitmap(60, 9, SmallEnemy20pointB, 16,10);
+//  ST7735_DrawBitmap(80, 9, SmallEnemy30pointA, 16,10);
+//  ST7735_DrawBitmap(100, 9, SmallEnemy30pointB, 16,10);
 
 
-  Delay100ms(50);              // delay 5 sec at 80 MHz
+//  Delay100ms(50);              // delay 5 sec at 80 MHz
 
 
-  ST7735_FillScreen(0x0000);            // set screen to black
-  ST7735_SetCursor(1, 1);
-  ST7735_OutString("GAME OVER");
-  ST7735_SetCursor(1, 2);
-  ST7735_OutString("Nice try,");
-  ST7735_SetCursor(1, 3);
-  ST7735_OutString("Earthling!");
-  ST7735_SetCursor(2, 4);
-  LCD_OutDec(1234);
-  while(1){
-  }
+//  ST7735_FillScreen(0x0000);            // set screen to black
+//  ST7735_SetCursor(1, 1);
+//  ST7735_OutString("GAME OVER");
+//  ST7735_SetCursor(1, 2);
+//  ST7735_OutString("Nice try,");
+//  ST7735_SetCursor(1, 3);
+//  ST7735_OutString("Earthling!");
+//  ST7735_SetCursor(2, 4);
+//  LCD_OutDec(1234);
+//  while(1){
+//  }
 
 }
 
@@ -235,3 +300,15 @@ void Delay100ms(uint32_t count){uint32_t volatile time;
     count--;
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+

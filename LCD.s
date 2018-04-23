@@ -64,8 +64,38 @@ writecommand
 ;6) If bit 4 is high, loop back to step 5 (wait for BUSY bit to be low)
 
     
+ PUSH { R4 - R7 }
+Again	
+	LDR R4, =SSI0_SR_R
+	LDR R5, [R4]
+	ANDS R6, R5, #0x00000010
+	BNE Again
+	
+	LDR R4, =GPIO_PORTA_DATA_R          ; clear PA6
+	LDR R5, [R4]
+	BIC R5, #0x40
+	STR R5, [R4]
+	
+	LDR R4, =SSI0_DR_R
+	STRB R0, [R4]
+	
+Again2	
+	LDR R4, = SSI0_SR_R 
+	LDR R5, [R4]
+	ANDS R6, R5, #0x00000010
+	BNE Again2
+	
+	POP {R4 - R7}
+
+
+	BX  LR    
     
-    BX  LR                          ;   return
+	
+	
+	
+	
+	
+	
 
 ; This is a helper function that sends an 8-bit data to the LCD.
 ; Input: R0  8-bit data to transmit
@@ -76,10 +106,29 @@ writedata
 ;2) If bit 1 is low loop back to step 1 (wait for TNF bit to be high)
 ;3) Set D/C=PA6 to one
 ;4) Write the 8-bit data to SSI0_DR_R
-
+	PUSH {R4, R5}
+	
+WriteAgain
+	
+	LDR R4, = SSI0_SR_R
+	LDR R5, [R4]
+	ANDS R5, #0x02
+	BEQ WriteAgain
+	
+	LDR R4, = GPIO_PORTA_DATA_R
+	LDR R5, [R4]
+	ORR R5, #0x40
+	STR R5, [R4]
+	
+	LDR R4, = SSI0_DR_R
+	STRB R0, [R4]
+	
+	POP {R4, R5}
+    
+	BX LR
     
     
-    BX  LR                          ;   return
+   
 
 
 ;***************************************************
