@@ -5,30 +5,53 @@ F (.\DAC.c)(0x5ADA21C4)(-c --cpu Cortex-M4 -g -O0 --apcs=interwork --split_secti
 F (.\ADC.c)(0x5ADAB5D6)(-c --cpu Cortex-M4 -g -O0 --apcs=interwork --split_sections --signed_chars -I.. -I..\..\.. --C99-I "C:\Users\Adri\Desktop\Embedded Systems\ARM\RV31\INC"-I "C:\Users\Adri\Desktop\Embedded Systems\ARM\CMSIS\Include"-I "C:\Users\Adri\Desktop\Embedded Systems\ARM\Inc\Luminary"-Drvmdk -DPART_LM4F120H5QR-o .\adc.o --omf_browse .\adc.crf --depend .\adc.d)
 I (C:\Users\Adri\Desktop\Embedded Systems\ARM\ARMCC\include\stdint.h)(0x51C88A34)
 I (tm4c123gh6pm.h)(0x5ADA21C5)
-F (.\Timer0.c)(0x5ADA21C4)(-c --cpu Cortex-M4 -g -O0 --apcs=interwork --split_sections --signed_chars -I.. -I..\..\.. --C99-I "C:\Users\Adri\Desktop\Embedded Systems\ARM\RV31\INC"-I "C:\Users\Adri\Desktop\Embedded Systems\ARM\CMSIS\Include"-I "C:\Users\Adri\Desktop\Embedded Systems\ARM\Inc\Luminary"-Drvmdk -DPART_LM4F120H5QR-o .\timer0.o --omf_browse .\timer0.crf --depend .\timer0.d)
+F (.\Timer0.c)(0x5ADE9BD0)(-c --cpu Cortex-M4 -g -O0 --apcs=interwork --split_sections --signed_chars -I.. -I..\..\.. --C99-I "C:\Users\Adri\Desktop\Embedded Systems\ARM\RV31\INC"-I "C:\Users\Adri\Desktop\Embedded Systems\ARM\CMSIS\Include"-I "C:\Users\Adri\Desktop\Embedded Systems\ARM\Inc\Luminary"-Drvmdk -DPART_LM4F120H5QR-o .\timer0.o --omf_browse .\timer0.crf --depend .\timer0.d)
 I (C:\Users\Adri\Desktop\Embedded Systems\ARM\ARMCC\include\stdint.h)(0x51C88A34)
 I (tm4c123gh6pm.h)(0x5ADA21C5)
-F (.\Timer1.c)(0x5ADA21C5)(-c --cpu Cortex-M4 -g -O0 --apcs=interwork --split_sections --signed_chars -I.. -I..\..\.. --C99-I "C:\Users\Adri\Desktop\Embedded Systems\ARM\RV31\INC"-I "C:\Users\Adri\Desktop\Embedded Systems\ARM\CMSIS\Include"-I "C:\Users\Adri\Desktop\Embedded Systems\ARM\Inc\Luminary"-Drvmdk -DPART_LM4F120H5QR-o .\timer1.o --omf_browse .\timer1.crf --depend .\timer1.d)
+I (Collision.h)(0x5ADE938D)
+I (ST7735.h)(0x5ADA21C4)
+I (Random.h)(0x5ADA21C5)
+I (PLL.h)(0x5ADA21C4)
+I (ADC.h)(0x5ADB7844)
+I (Timer0.h)(0x5ADE4BE9)
+I (ISR.h)(0x5ADB7854)
+I (Portinit.h)(0x5ADBAB4B)
+I (Sprites.h)(0x5ADEAE93)
+I (SpaceInvaders.h)(0x5ADEB1DD)
+I (Timer1.h)(0x5ADE886D)
+F (.\Timer1.c)(0x5ADEB305)(-c --cpu Cortex-M4 -g -O0 --apcs=interwork --split_sections --signed_chars -I.. -I..\..\.. --C99-I "C:\Users\Adri\Desktop\Embedded Systems\ARM\RV31\INC"-I "C:\Users\Adri\Desktop\Embedded Systems\ARM\CMSIS\Include"-I "C:\Users\Adri\Desktop\Embedded Systems\ARM\Inc\Luminary"-Drvmdk -DPART_LM4F120H5QR-o .\timer1.o --omf_browse .\timer1.crf --depend .\timer1.d)
 I (C:\Users\Adri\Desktop\Embedded Systems\ARM\ARMCC\include\stdint.h)(0x51C88A34)
 I (tm4c123gh6pm.h)(0x5ADA21C5)
+I (ADC.h)(0x5ADB7844)
+I (ST7735.h)(0x5ADA21C4)
+I (Random.h)(0x5ADA21C5)
+I (PLL.h)(0x5ADA21C4)
+I (Collision.h)(0x5ADE938D)
+I (Timer0.h)(0x5ADE4BE9)
+I (ISR.h)(0x5ADB7854)
+I (Portinit.h)(0x5ADBAB4B)
+I (Sprites.h)(0x5ADEAE93)
+I (SpaceInvaders.h)(0x5ADEB1DD)
+I (Timer1.h)(0x5ADE886D)
 F (.\Sound.c)(0x5ADA21C4)(-c --cpu Cortex-M4 -g -O0 --apcs=interwork --split_sections --signed_chars -I.. -I..\..\.. --C99-I "C:\Users\Adri\Desktop\Embedded Systems\ARM\RV31\INC"-I "C:\Users\Adri\Desktop\Embedded Systems\ARM\CMSIS\Include"-I "C:\Users\Adri\Desktop\Embedded Systems\ARM\Inc\Luminary"-Drvmdk -DPART_LM4F120H5QR-o .\sound.o --omf_browse .\sound.crf --depend .\sound.d)
 I (C:\Users\Adri\Desktop\Embedded Systems\ARM\ARMCC\include\stdint.h)(0x51C88A34)
 I (Sound.h)(0x5ADA21C4)
 I (DAC.h)(0x5ADA21C4)
 F (.\LCD.s)(0x5ADA9FCC)(--cpu Cortex-M4 -g --apcs=interwork -I "C:\Users\Adri\Desktop\Embedded Systems\ARM\RV31\INC"-I "C:\Users\Adri\Desktop\Embedded Systems\ARM\CMSIS\Include"-I "C:\Users\Adri\Desktop\Embedded Systems\ARM\Inc\Luminary"--list .\lcd.lst --xref -o .\lcd.o --depend .\lcd.d)
 F (.\Print.s)(0x5ADA21C4)(--cpu Cortex-M4 -g --apcs=interwork -I "C:\Users\Adri\Desktop\Embedded Systems\ARM\RV31\INC"-I "C:\Users\Adri\Desktop\Embedded Systems\ARM\CMSIS\Include"-I "C:\Users\Adri\Desktop\Embedded Systems\ARM\Inc\Luminary"--list .\print.lst --xref -o .\print.o --depend .\print.d)
-F (.\SpaceInvaders.c)(0x5ADBBD8E)(-c --cpu Cortex-M4 -g -O0 --apcs=interwork --split_sections --signed_chars -I.. -I..\..\.. --C99-I "C:\Users\Adri\Desktop\Embedded Systems\ARM\RV31\INC"-I "C:\Users\Adri\Desktop\Embedded Systems\ARM\CMSIS\Include"-I "C:\Users\Adri\Desktop\Embedded Systems\ARM\Inc\Luminary"-Drvmdk -DPART_LM4F120H5QR-o .\spaceinvaders.o --omf_browse .\spaceinvaders.crf --depend .\spaceinvaders.d)
+F (.\SpaceInvaders.c)(0x5ADEB335)(-c --cpu Cortex-M4 -g -O0 --apcs=interwork --split_sections --signed_chars -I.. -I..\..\.. --C99-I "C:\Users\Adri\Desktop\Embedded Systems\ARM\RV31\INC"-I "C:\Users\Adri\Desktop\Embedded Systems\ARM\CMSIS\Include"-I "C:\Users\Adri\Desktop\Embedded Systems\ARM\Inc\Luminary"-Drvmdk -DPART_LM4F120H5QR-o .\spaceinvaders.o --omf_browse .\spaceinvaders.crf --depend .\spaceinvaders.d)
 I (C:\Users\Adri\Desktop\Embedded Systems\ARM\ARMCC\include\stdint.h)(0x51C88A34)
 I (tm4c123gh6pm.h)(0x5ADA21C5)
 I (ST7735.h)(0x5ADA21C4)
 I (Random.h)(0x5ADA21C5)
 I (PLL.h)(0x5ADA21C4)
 I (ADC.h)(0x5ADB7844)
-I (Timer0.h)(0x5ADA21C5)
+I (Timer0.h)(0x5ADE4BE9)
 I (ISR.h)(0x5ADB7854)
 I (Portinit.h)(0x5ADBAB4B)
-I (Player.h)(0x5ADBB3D8)
-I (SpaceInvaders.h)(0x5ADBAC8D)
+I (Timer1.h)(0x5ADE886D)
+I (Sprites.h)(0x5ADEAE93)
+I (SpaceInvaders.h)(0x5ADEB1DD)
 F (.\ST7735.c)(0x5ADA21C4)(-c --cpu Cortex-M4 -g -O0 --apcs=interwork --split_sections --signed_chars -I.. -I..\..\.. --C99-I "C:\Users\Adri\Desktop\Embedded Systems\ARM\RV31\INC"-I "C:\Users\Adri\Desktop\Embedded Systems\ARM\CMSIS\Include"-I "C:\Users\Adri\Desktop\Embedded Systems\ARM\Inc\Luminary"-Drvmdk -DPART_LM4F120H5QR-o .\st7735.o --omf_browse .\st7735.crf --depend .\st7735.d)
 I (C:\Users\Adri\Desktop\Embedded Systems\ARM\ARMCC\include\stdio.h)(0x51C88A34)
 I (C:\Users\Adri\Desktop\Embedded Systems\ARM\ARMCC\include\stdint.h)(0x51C88A34)
@@ -39,7 +62,7 @@ F (.\PLL.c)(0x5ADA21C4)(-c --cpu Cortex-M4 -g -O0 --apcs=interwork --split_secti
 I (C:\Users\Adri\Desktop\Embedded Systems\ARM\ARMCC\include\stdint.h)(0x51C88A34)
 I (PLL.h)(0x5ADA21C4)
 I (..\../inc/tm4c123gh6pm.h)(0x5388C2DA)
-F (.\Timer0.h)(0x5ADA21C5)()
+F (.\Timer0.h)(0x5ADE4BE9)()
 F (.\Missile.c)(0x5ADB8096)(-c --cpu Cortex-M4 -g -O0 --apcs=interwork --split_sections --signed_chars -I.. -I..\..\.. --C99-I "C:\Users\Adri\Desktop\Embedded Systems\ARM\RV31\INC"-I "C:\Users\Adri\Desktop\Embedded Systems\ARM\CMSIS\Include"-I "C:\Users\Adri\Desktop\Embedded Systems\ARM\Inc\Luminary"-Drvmdk -DPART_LM4F120H5QR-o .\missile.o --omf_browse .\missile.crf --depend .\missile.d)
 I (C:\Users\Adri\Desktop\Embedded Systems\ARM\ARMCC\include\stdint.h)(0x51C88A34)
 I (tm4c123gh6pm.h)(0x5ADA21C5)
@@ -47,26 +70,42 @@ I (ST7735.h)(0x5ADA21C4)
 I (Random.h)(0x5ADA21C5)
 I (PLL.h)(0x5ADA21C4)
 I (ADC.h)(0x5ADB7844)
-I (Timer0.h)(0x5ADA21C5)
-F (.\Player.c)(0x5ADBC95A)(-c --cpu Cortex-M4 -g -O0 --apcs=interwork --split_sections --signed_chars -I.. -I..\..\.. --C99-I "C:\Users\Adri\Desktop\Embedded Systems\ARM\RV31\INC"-I "C:\Users\Adri\Desktop\Embedded Systems\ARM\CMSIS\Include"-I "C:\Users\Adri\Desktop\Embedded Systems\ARM\Inc\Luminary"-Drvmdk -DPART_LM4F120H5QR-o .\player.o --omf_browse .\player.crf --depend .\player.d)
-I (C:\Users\Adri\Desktop\Embedded Systems\ARM\ARMCC\include\stdint.h)(0x51C88A34)
-I (tm4c123gh6pm.h)(0x5ADA21C5)
-I (ST7735.h)(0x5ADA21C4)
-I (SpaceInvaders.h)(0x5ADBAC8D)
-I (Random.h)(0x5ADA21C5)
-I (PLL.h)(0x5ADA21C4)
-I (ADC.h)(0x5ADB7844)
-I (Timer0.h)(0x5ADA21C5)
-F (.\ISR.c)(0x5ADBC54A)(-c --cpu Cortex-M4 -g -O0 --apcs=interwork --split_sections --signed_chars -I.. -I..\..\.. --C99-I "C:\Users\Adri\Desktop\Embedded Systems\ARM\RV31\INC"-I "C:\Users\Adri\Desktop\Embedded Systems\ARM\CMSIS\Include"-I "C:\Users\Adri\Desktop\Embedded Systems\ARM\Inc\Luminary"-Drvmdk -DPART_LM4F120H5QR-o .\isr.o --omf_browse .\isr.crf --depend .\isr.d)
+I (Timer0.h)(0x5ADE4BE9)
+F (.\ISR.c)(0x5ADE88AD)(-c --cpu Cortex-M4 -g -O0 --apcs=interwork --split_sections --signed_chars -I.. -I..\..\.. --C99-I "C:\Users\Adri\Desktop\Embedded Systems\ARM\RV31\INC"-I "C:\Users\Adri\Desktop\Embedded Systems\ARM\CMSIS\Include"-I "C:\Users\Adri\Desktop\Embedded Systems\ARM\Inc\Luminary"-Drvmdk -DPART_LM4F120H5QR-o .\isr.o --omf_browse .\isr.crf --depend .\isr.d)
 I (C:\Users\Adri\Desktop\Embedded Systems\ARM\ARMCC\include\stdint.h)(0x51C88A34)
 I (tm4c123gh6pm.h)(0x5ADA21C5)
 I (ST7735.h)(0x5ADA21C4)
 I (Random.h)(0x5ADA21C5)
 I (PLL.h)(0x5ADA21C4)
 I (ADC.h)(0x5ADB7844)
-I (Timer0.h)(0x5ADA21C5)
-I (SpaceInvaders.h)(0x5ADBAC8D)
+I (Timer0.h)(0x5ADE4BE9)
+I (SpaceInvaders.h)(0x5ADEB1DD)
+I (Sprites.h)(0x5ADEAE93)
 F (.\Portinit.c)(0x5ADBB961)(-c --cpu Cortex-M4 -g -O0 --apcs=interwork --split_sections --signed_chars -I.. -I..\..\.. --C99-I "C:\Users\Adri\Desktop\Embedded Systems\ARM\RV31\INC"-I "C:\Users\Adri\Desktop\Embedded Systems\ARM\CMSIS\Include"-I "C:\Users\Adri\Desktop\Embedded Systems\ARM\Inc\Luminary"-Drvmdk -DPART_LM4F120H5QR-o .\portinit.o --omf_browse .\portinit.crf --depend .\portinit.d)
 I (C:\Users\Adri\Desktop\Embedded Systems\ARM\ARMCC\include\stdint.h)(0x51C88A34)
 I (tm4c123gh6pm.h)(0x5ADA21C5)
-F (.\SpaceInvaders.h)(0x5ADBAC8D)()
+F (.\SpaceInvaders.h)(0x5ADEB1DD)()
+F (.\Sprites.c)(0x5ADEB1DC)(-c --cpu Cortex-M4 -g -O0 --apcs=interwork --split_sections --signed_chars -I.. -I..\..\.. --C99-I "C:\Users\Adri\Desktop\Embedded Systems\ARM\RV31\INC"-I "C:\Users\Adri\Desktop\Embedded Systems\ARM\CMSIS\Include"-I "C:\Users\Adri\Desktop\Embedded Systems\ARM\Inc\Luminary"-Drvmdk -DPART_LM4F120H5QR-o .\sprites.o --omf_browse .\sprites.crf --depend .\sprites.d)
+I (C:\Users\Adri\Desktop\Embedded Systems\ARM\ARMCC\include\stdint.h)(0x51C88A34)
+I (tm4c123gh6pm.h)(0x5ADA21C5)
+I (ST7735.h)(0x5ADA21C4)
+I (Random.h)(0x5ADA21C5)
+I (PLL.h)(0x5ADA21C4)
+I (ADC.h)(0x5ADB7844)
+I (Sprites.h)(0x5ADEAE93)
+I (SpaceInvaders.h)(0x5ADEB1DD)
+I (Timer0.h)(0x5ADE4BE9)
+F (.\Timer1.h)(0x5ADE886D)()
+F (.\Collision.c)(0x5ADEB5F1)(-c --cpu Cortex-M4 -g -O0 --apcs=interwork --split_sections --signed_chars -I.. -I..\..\.. --C99-I "C:\Users\Adri\Desktop\Embedded Systems\ARM\RV31\INC"-I "C:\Users\Adri\Desktop\Embedded Systems\ARM\CMSIS\Include"-I "C:\Users\Adri\Desktop\Embedded Systems\ARM\Inc\Luminary"-Drvmdk -DPART_LM4F120H5QR-o .\collision.o --omf_browse .\collision.crf --depend .\collision.d)
+I (C:\Users\Adri\Desktop\Embedded Systems\ARM\ARMCC\include\stdint.h)(0x51C88A34)
+I (tm4c123gh6pm.h)(0x5ADA21C5)
+I (ST7735.h)(0x5ADA21C4)
+I (Random.h)(0x5ADA21C5)
+I (PLL.h)(0x5ADA21C4)
+I (ADC.h)(0x5ADB7844)
+I (Timer0.h)(0x5ADE4BE9)
+I (ISR.h)(0x5ADB7854)
+I (Portinit.h)(0x5ADBAB4B)
+I (Sprites.h)(0x5ADEAE93)
+I (SpaceInvaders.h)(0x5ADEB1DD)
+I (Timer1.h)(0x5ADE886D)

@@ -24,6 +24,7 @@
 #include <stdint.h>
 
 #include "tm4c123gh6pm.h"
+#include "Collision.h"
 
 void (*PeriodicTask0)(void);   // user function
 
@@ -32,9 +33,9 @@ void (*PeriodicTask0)(void);   // user function
 // Inputs:  task is a pointer to a user function
 //          period in units (1/clockfreq)
 // Outputs: none
-void Timer0_Init(void(*task)(void), uint32_t period){
+void Timer0_Init( uint32_t period){
   SYSCTL_RCGCTIMER_R |= 0x01;   // 0) activate TIMER0
-  PeriodicTask0 = task;          // user function
+           // user function
   TIMER0_CTL_R = 0x00000000;    // 1) disable TIMER0A during setup
   TIMER0_CFG_R = 0x00000000;    // 2) configure for 32-bit mode
   TIMER0_TAMR_R = 0x00000002;   // 3) configure for periodic mode, default down-count settings
@@ -50,6 +51,15 @@ void Timer0_Init(void(*task)(void), uint32_t period){
 }
 
 void Timer0A_Handler(void){
-  TIMER0_ICR_R = TIMER_ICR_TATOCINT;// acknowledge TIMER0A timeout
-  (*PeriodicTask0)();                // execute user task
+  uint32_t index = 0;
+	TIMER0_ICR_R = TIMER_ICR_TATOCINT;// acknowledge TIMER0A timeout
+ 
+	while (index < 16)
+	{
+		alien[index].y ++;
+		index++;
+	}              // execute user task
+	
+	Collision();
+	
 }

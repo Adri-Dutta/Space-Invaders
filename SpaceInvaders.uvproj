@@ -481,11 +481,6 @@
               <FilePath>.\Missile.c</FilePath>
             </File>
             <File>
-              <FileName>Player.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Player.c</FilePath>
-            </File>
-            <File>
               <FileName>ISR.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\ISR.c</FilePath>
@@ -499,6 +494,21 @@
               <FileName>SpaceInvaders.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\SpaceInvaders.h</FilePath>
+            </File>
+            <File>
+              <FileName>Sprites.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Sprites.c</FilePath>
+            </File>
+            <File>
+              <FileName>Timer1.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Timer1.h</FilePath>
+            </File>
+            <File>
+              <FileName>Collision.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Collision.c</FilePath>
             </File>
           </Files>
         </Group>

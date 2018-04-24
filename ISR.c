@@ -6,6 +6,7 @@
 #include "ADC.h"
 #include "Timer0.h"
 #include "SpaceInvaders.h"
+#include "Sprites.h"
 
 
 
@@ -19,7 +20,7 @@ void Systick_Init(void){
  NVIC_ST_CURRENT_R = 0;             // clear
  NVIC_SYS_PRI3_R = (NVIC_SYS_PRI3_R & 0x00FFFFFF)| 0x20000000;        //set priority
  NVIC_ST_CTRL_R = 0x0007;          // enable clock, interrupt and enable bit
- NVIC_ST_RELOAD_R = 1333333333;
+ NVIC_ST_RELOAD_R = 1333;
 }
 
 
@@ -27,19 +28,18 @@ void Systick_Init(void){
 
 void SysTick_Handler (void)
 	{
-		uint32_t dummy = 0;
-		playerx = ADC_In();
-		flag = 1;
-		dummy = GPIO_PORTE_DATA_R;
-		if ((dummy && 0x01) != 0)
+		uint32_t data;                       // ship movement
+		data = ADC_In();
+		ship.x = ((110 * data)/4095) -8;
+	
+	
+		if ( (GPIO_PORTE_DATA_R != 0x00) && (bullet.status == 0))
 		{
-			missileflag = 1;
-			GPIO_PORTE_DATA_R &= 0x00;
-			
+			bullet.status = 1;
+			data = ADC_In();
+			bullet.x = ((110 * data) /4095)+5;
+			bullet.y = 151; 
 		}
-		GPIO_PORTE_DATA_R &= 0x00;
-	
-	
-	
+		
 	}
 	

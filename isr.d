@@ -14,3 +14,15 @@
 .\isr.o: ADC.h
 .\isr.o: Random.h
 .\isr.o: PLL.h
+.\isr.o: Sprites.h
+.\isr.o: Random.h
+.\isr.o: PLL.h
+.\isr.o: ADC.h
+.\isr.o: Random.h
+.\isr.o: PLL.h
+.\isr.o: SpaceInvaders.h
+.\isr.o: Random.h
+.\isr.o: PLL.h
+.\isr.o: ADC.h
+.\isr.o: Random.h
+.\isr.o: PLL.h

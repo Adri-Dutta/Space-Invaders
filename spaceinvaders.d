@@ -15,7 +15,13 @@
 .\spaceinvaders.o: Random.h
 .\spaceinvaders.o: PLL.h
 .\spaceinvaders.o: Portinit.h
-.\spaceinvaders.o: Player.h
+.\spaceinvaders.o: Timer1.h
+.\spaceinvaders.o: Sprites.h
+.\spaceinvaders.o: Random.h
+.\spaceinvaders.o: PLL.h
+.\spaceinvaders.o: ADC.h
+.\spaceinvaders.o: Random.h
+.\spaceinvaders.o: PLL.h
 .\spaceinvaders.o: SpaceInvaders.h
 .\spaceinvaders.o: Random.h
 .\spaceinvaders.o: PLL.h
