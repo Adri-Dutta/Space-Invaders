@@ -59,7 +59,12 @@
 #include "ISR.h"
 #include "Portinit.h"
 #include "Timer1.h"
-#include "Sprites.h"
+#include "print.h"
+#include "Collision.h"
+#include "DAC.h"
+#include "Timer2.h"
+
+
 
 
 
@@ -278,11 +283,16 @@ int main(void){
 	ADC_Init();    // initialize to sample ADC
   PortF_Init();
   PortE_Init();
+	DAC_Init();
+	Timer2_Init(0x08FF);
 	Systick_Init();
   Output_Init();
 	Timer0_Init(0xFFFFFF);
 	ST7735_InitR(INITR_REDTAB);
 	Timer1_Init(0x0009FFFF);
+	
+	ST7735_SetCursor (1,0);
+	ST7735_OutString("Score: ");
 	
 	EnableInterrupts();
 	
@@ -316,6 +326,12 @@ int main(void){
 		}
 		
 		
+		
+		
+		ST7735_SetCursor(7,0);
+		LCD_OutDec(score);
+		
+		
 		index++;
 	
 	}
@@ -324,7 +340,13 @@ int main(void){
 }	
 	
 	
-	
+void Gameover (void)
+{
+	ST7735_FillScreen(0x0000); 
+	ST7735_SetCursor (6,6);
+	ST7735_OutString("Game Over!");
+	while (1) {};
+}	
 	
 	
 	

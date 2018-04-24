@@ -10,7 +10,7 @@
 #include "Sprites.h"
 #include "Timer1.h"
 
-
+uint32_t score = 0;
 
 void Collision (void)
 {
@@ -19,6 +19,7 @@ void Collision (void)
 	uint8_t nxindex = 0;
 	uint8_t flagx = 0;
 	uint8_t flagy = 0;
+	
 	
 	
 	if (bullet.status == 1)
@@ -53,6 +54,7 @@ void Collision (void)
 		{
 			alien[index].status = 0;
 			bullet.status = 0;
+			score += 10;
 		}
 
 		

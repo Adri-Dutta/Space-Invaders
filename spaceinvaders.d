@@ -16,6 +16,20 @@
 .\spaceinvaders.o: PLL.h
 .\spaceinvaders.o: Portinit.h
 .\spaceinvaders.o: Timer1.h
+.\spaceinvaders.o: print.h
+.\spaceinvaders.o: Collision.h
+.\spaceinvaders.o: Random.h
+.\spaceinvaders.o: PLL.h
+.\spaceinvaders.o: ADC.h
+.\spaceinvaders.o: Random.h
+.\spaceinvaders.o: PLL.h
+.\spaceinvaders.o: ISR.h
+.\spaceinvaders.o: Random.h
+.\spaceinvaders.o: PLL.h
+.\spaceinvaders.o: ADC.h
+.\spaceinvaders.o: Random.h
+.\spaceinvaders.o: PLL.h
+.\spaceinvaders.o: Portinit.h
 .\spaceinvaders.o: Sprites.h
 .\spaceinvaders.o: Random.h
 .\spaceinvaders.o: PLL.h
@@ -28,3 +42,5 @@
 .\spaceinvaders.o: ADC.h
 .\spaceinvaders.o: Random.h
 .\spaceinvaders.o: PLL.h
+.\spaceinvaders.o: DAC.h
+.\spaceinvaders.o: Timer2.h

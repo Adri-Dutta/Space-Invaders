@@ -22,10 +22,10 @@
 //	
 //} typealien;
 typechar alien[16] = {
-{ 16,10 , {SmallEnemy30pointA,SmallEnemy30pointAempty}, 16, 10, 1},{ 32,10 , {SmallEnemy30pointA,SmallEnemy30pointAempty}, 16, 10, 1},{ 48,10 , {SmallEnemy30pointA,SmallEnemy30pointAempty}, 16, 10, 1},{ 64,10 , {SmallEnemy30pointA,SmallEnemy30pointAempty}, 16, 10, 1},
-{ 16,21 , {SmallEnemy30pointA,SmallEnemy30pointAempty}, 16, 10, 1},{ 32,21 , {SmallEnemy30pointA,SmallEnemy30pointAempty}, 16, 10, 1},{ 48,21 , {SmallEnemy30pointA,SmallEnemy30pointAempty}, 16, 10, 1},{ 64,21 , {SmallEnemy30pointA,SmallEnemy30pointAempty}, 16, 10, 1},
-{ 16,32 , {SmallEnemy30pointA,SmallEnemy30pointAempty}, 16, 10, 1},{ 32,32 , {SmallEnemy30pointA,SmallEnemy30pointAempty}, 16, 10, 1},{ 48,32 , {SmallEnemy30pointA,SmallEnemy30pointAempty}, 16, 10, 1},{ 64,32 , {SmallEnemy30pointA,SmallEnemy30pointAempty}, 16, 10, 1},
-{ 16,43 , {SmallEnemy30pointA,SmallEnemy30pointAempty}, 16, 10, 1},{ 32,43 , {SmallEnemy30pointA,SmallEnemy30pointAempty}, 16, 10, 1},{ 48,43 , {SmallEnemy30pointA,SmallEnemy30pointAempty}, 16, 10, 1},{ 64,43 , {SmallEnemy30pointA,SmallEnemy30pointAempty}, 16, 10, 1}
+{ 16,30 , {SmallEnemy30pointA,SmallEnemy30pointAempty}, 16, 10, 1},{ 32,30 , {SmallEnemy30pointA,SmallEnemy30pointAempty}, 16, 10, 1},{ 48,30 , {SmallEnemy30pointA,SmallEnemy30pointAempty}, 16, 10, 1},{ 64,30 , {SmallEnemy30pointA,SmallEnemy30pointAempty}, 16, 10, 1},
+{ 16,41 , {SmallEnemy30pointA,SmallEnemy30pointAempty}, 16, 10, 1},{ 32,41 , {SmallEnemy30pointA,SmallEnemy30pointAempty}, 16, 10, 1},{ 48,41 , {SmallEnemy30pointA,SmallEnemy30pointAempty}, 16, 10, 1},{ 64,41 , {SmallEnemy30pointA,SmallEnemy30pointAempty}, 16, 10, 1},
+{ 16,52 , {SmallEnemy30pointA,SmallEnemy30pointAempty}, 16, 10, 1},{ 32,52 , {SmallEnemy30pointA,SmallEnemy30pointAempty}, 16, 10, 1},{ 48,52 , {SmallEnemy30pointA,SmallEnemy30pointAempty}, 16, 10, 1},{ 64,52 , {SmallEnemy30pointA,SmallEnemy30pointAempty}, 16, 10, 1},
+{ 16,63 , {SmallEnemy30pointA,SmallEnemy30pointAempty}, 16, 10, 1},{ 32,63 , {SmallEnemy30pointA,SmallEnemy30pointAempty}, 16, 10, 1},{ 48,63 , {SmallEnemy30pointA,SmallEnemy30pointAempty}, 16, 10, 1},{ 64,63 , {SmallEnemy30pointA,SmallEnemy30pointAempty}, 16, 10, 1}
 };
 
 typechar ship ={63, 159, {PlayerShip0, PlayerShip0}, 30,8, 1};

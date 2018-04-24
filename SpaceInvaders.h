@@ -26,3 +26,7 @@ extern const unsigned short Missile0[];
 extern const unsigned short PlayerShip0[];
 extern const unsigned short Missile0empty[];
 extern const unsigned short SmallEnemy30pointAempty[];
+
+
+
+void Gameover (void);

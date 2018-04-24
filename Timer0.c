@@ -25,6 +25,7 @@
 
 #include "tm4c123gh6pm.h"
 #include "Collision.h"
+#include "SpaceInvaders.h"
 
 void (*PeriodicTask0)(void);   // user function
 
@@ -57,9 +58,26 @@ void Timer0A_Handler(void){
 	while (index < 16)
 	{
 		alien[index].y ++;
+		if ((alien[index].y >= 159) && (alien[index].status == 1))
+		{
+			Gameover();
+		}
+		
 		index++;
 	}              // execute user task
 	
 	Collision();
+	index = 0;
+	
+//	while (index < 16)
+//	{
+//		if (alien[index].y >= 159)
+//		{
+//			Gameover();
+//			
+//		}
+//		
+//	}
+	
 	
 }

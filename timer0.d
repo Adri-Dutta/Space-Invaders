@@ -29,3 +29,9 @@
 .\timer0.o: Random.h
 .\timer0.o: PLL.h
 .\timer0.o: Timer1.h
+.\timer0.o: SpaceInvaders.h
+.\timer0.o: Random.h
+.\timer0.o: PLL.h
+.\timer0.o: ADC.h
+.\timer0.o: Random.h
+.\timer0.o: PLL.h

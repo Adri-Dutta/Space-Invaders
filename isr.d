@@ -26,3 +26,4 @@
 .\isr.o: ADC.h
 .\isr.o: Random.h
 .\isr.o: PLL.h
+.\isr.o: Timer2.h

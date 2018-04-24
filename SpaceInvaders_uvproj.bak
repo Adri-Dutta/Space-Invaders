@@ -505,6 +505,16 @@
               <FileType>5</FileType>
               <FilePath>.\Timer1.h</FilePath>
             </File>
+            <File>
+              <FileName>Collision.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Collision.c</FilePath>
+            </File>
+            <File>
+              <FileName>print.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\print.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

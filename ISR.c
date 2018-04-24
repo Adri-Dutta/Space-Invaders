@@ -7,6 +7,7 @@
 #include "Timer0.h"
 #include "SpaceInvaders.h"
 #include "Sprites.h"
+#include "Timer2.h"
 
 
 
@@ -38,7 +39,8 @@ void SysTick_Handler (void)
 			bullet.status = 1;
 			data = ADC_In();
 			bullet.x = ((110 * data) /4095)+5;
-			bullet.y = 151; 
+			bullet.y = 151;
+			TIMER2_CTL_R = 0x00000001;    // 10) enable TIMER2A
 		}
 		
 	}
