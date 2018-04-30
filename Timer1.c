@@ -52,7 +52,7 @@ void Timer1_Init(uint32_t period){
   TIMER1_CTL_R = 0x00000001;    // 10) enable TIMER1A
 }
 
-void Timer1A_Handler(void){
+void Timer1A_Handler(void){                                                          //moves bullet
   
 	TIMER1_ICR_R = TIMER_ICR_TATOCINT;// acknowledge TIMER1A timeout
   //(*PeriodicTask1)();                // execute user task
@@ -70,8 +70,47 @@ void Timer1A_Handler(void){
 			bullet.y = 151;
 			bullet.status = 0;
 		}
+		if (bullet2.status == 0)
+		{
+			TIMER2_CTL_R = 0x0000000;
+			
+		}
 		
 	}
+	else
+	{
+		bullet.y = 151;
+	}
+	
+	
+	
+	
+	
+	
+	
+	if (bullet2.status != 0)
+	{
+		
+		if (bullet2.x < 129)
+		{
+			bullet2.x++;
+		}
+		else
+		{
+			bullet2.x = 16;
+			bullet2.status = 0;
+		}
+		if (bullet.status == 0)
+		{
+			TIMER2_CTL_R = 0x0000000;
+		}
+	}
+	
+	else
+	{
+		bullet2.x = 16;
+	}
+	
 	
 	Collision();
 

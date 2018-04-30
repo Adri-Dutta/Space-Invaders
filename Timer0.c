@@ -51,23 +51,55 @@ void Timer0_Init( uint32_t period){
   TIMER0_CTL_R = 0x00000001;    // 10) enable TIMER0A
 }
 
-void Timer0A_Handler(void){
+void Timer0A_Handler(void){                                                         // moves up aliens
   uint32_t index = 0;
 	TIMER0_ICR_R = TIMER_ICR_TATOCINT;// acknowledge TIMER0A timeout
  
-	while (index < 16)
-	{
-		alien[index].y ++;
-		if ((alien[index].y >= 159) && (alien[index].status == 1))
-		{
-			Gameover();
-		}
-		
-		index++;
-	}              // execute user task
+						
 	
-	Collision();
-	index = 0;
+	
+	
+	if (level == 1)
+	{					
+						index = 0;
+						while (index < 16)
+						{
+							alien[index].y ++;
+							if ((alien[index].y >= 159) && (alien[index].status == 1))
+							{
+								Gameover();
+							}
+							
+							index++;
+						}              // execute user task
+						
+						Collision();
+						index = 0;
+	 }
+	
+	 
+	 if (level == 2)
+		 
+	 {
+						index = 0;
+						while (index < 20)
+									{
+										alien2[index].y ++;
+										if ((alien2[index].y >= 159) && (alien2[index].status == 1))
+										{
+											Gameover();
+										}
+										
+										index++;
+									}              // execute user task
+									
+									Collision();
+									index = 0;
+					 
+		 
+		}
+	
+	
 	
 //	while (index < 16)
 //	{

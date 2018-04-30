@@ -14,3 +14,4 @@
 void Collision(void);                 //looks for collision
 
 extern uint32_t score;
+extern uint8_t ivdhit;

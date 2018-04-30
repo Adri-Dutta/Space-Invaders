@@ -17,4 +17,5 @@
 
 void ADC_Init(void); //initialize adc
 uint32_t ADC_In(void); // busy wait and then sends data
+uint32_t ADC2_In (void);
 

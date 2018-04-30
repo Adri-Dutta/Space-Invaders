@@ -26,8 +26,11 @@ typedef struct sprites
 
 
 extern typechar alien[];
+extern typechar alien2[];
 extern typechar ship;
 extern typechar bullet;
+extern typechar ship2;
+extern typechar bullet2;
 
 
 

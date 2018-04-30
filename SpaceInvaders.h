@@ -8,6 +8,7 @@
 
 
 
+
 extern int16_t Convert(uint32_t data);
 extern uint8_t flag;
 extern uint32_t playerx;
@@ -26,6 +27,13 @@ extern const unsigned short Missile0[];
 extern const unsigned short PlayerShip0[];
 extern const unsigned short Missile0empty[];
 extern const unsigned short SmallEnemy30pointAempty[];
+extern const unsigned short PlayerShip0rotated[];
+extern const unsigned short Missile0rotated[];
+extern const unsigned short Missile0rotatedempty[];
+extern uint8_t gameoverflag;
+extern uint8_t winflag;
+extern uint8_t level;
+extern uint8_t level2flag;
 
 
 

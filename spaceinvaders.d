@@ -44,3 +44,10 @@
 .\spaceinvaders.o: PLL.h
 .\spaceinvaders.o: DAC.h
 .\spaceinvaders.o: Timer2.h
+.\spaceinvaders.o: Spaceinvaders.h
+.\spaceinvaders.o: Random.h
+.\spaceinvaders.o: PLL.h
+.\spaceinvaders.o: ADC.h
+.\spaceinvaders.o: Random.h
+.\spaceinvaders.o: PLL.h
+.\spaceinvaders.o: Level2.h

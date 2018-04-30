@@ -515,6 +515,16 @@
               <FileType>5</FileType>
               <FilePath>.\print.h</FilePath>
             </File>
+            <File>
+              <FileName>Timer2.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Timer2.c</FilePath>
+            </File>
+            <File>
+              <FileName>DAC.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\DAC.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

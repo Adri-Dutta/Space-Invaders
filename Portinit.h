@@ -4,5 +4,7 @@
 
 void PortF_Init(void);
 void PortE_Init (void);
+void GPIOPortE_Handler(void);
 
 
+extern uint8_t shootflag;

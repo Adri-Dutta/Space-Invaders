@@ -63,7 +63,8 @@
 #include "Collision.h"
 #include "DAC.h"
 #include "Timer2.h"
-
+#include "Spaceinvaders.h"
+#include "Level2.h"
 
 
 
@@ -86,6 +87,10 @@ int8_t alienflag = 0;
 int16_t convertedmissilex = 0;
 int16_t convertedmissiley = 0;
 int8_t missileflag = 0;
+uint8_t gameoverflag = 0;
+uint8_t level2flag = 0;
+uint8_t winflag = 0;
+uint8_t level = 1;
 
 
 
@@ -97,6 +102,7 @@ int8_t missileflag = 0;
 // *************************** Images ***************************
 // enemy ship that starts at the top of the screen (arms/mouth closed)
 // width=16 x height=10
+
 
 
 const unsigned short SmallEnemy10pointA[] = {
@@ -266,14 +272,64 @@ const unsigned short Missile0empty[] = {
  //4 by 9
 
 
+const unsigned short PlayerShip0rotated[] = {
+ 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000,
+ 0x07E0, 0x07E0, 0x07E0, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x07E0, 0x07E0, 0x07E0, 0x07E0, 0x0000, 0x0000, 0x0000, 0x0000,
+ 0x07E0, 0x07E0, 0x07E0, 0x07E0, 0x0000, 0x0000, 0x0000, 0x0000, 0x07E0, 0x07E0, 0x07E0, 0x07E0, 0x0000, 0x0000, 0x0000, 0x0000,
+ 0x07E0, 0x07E0, 0x07E0, 0x07E0, 0x0000, 0x0000, 0x0000, 0x0000, 0x07E0, 0x07E0, 0x07E0, 0x07E0, 0x07E0, 0x07E0, 0x0000, 0x0000,
+ 0x07E0, 0x07E0, 0x07E0, 0x07E0, 0x07E0, 0x07E0, 0x07E0, 0x0000, 0x07E0, 0x07E0, 0x07E0, 0x07E0, 0x07E0, 0x07E0, 0x07E0, 0x0000,
+ 0x07E0, 0x07E0, 0x07E0, 0x07E0, 0x07E0, 0x07E0, 0x0000, 0x0000, 0x07E0, 0x07E0, 0x07E0, 0x07E0, 0x0000, 0x0000, 0x0000, 0x0000,
+ 0x07E0, 0x07E0, 0x07E0, 0x07E0, 0x0000, 0x0000, 0x0000, 0x0000, 0x07E0, 0x07E0, 0x07E0, 0x07E0, 0x0000, 0x0000, 0x0000, 0x0000,
+ 0x07E0, 0x07E0, 0x07E0, 0x07E0, 0x0000, 0x0000, 0x0000, 0x0000, 0x07E0, 0x07E0, 0x07E0, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000,
+ 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000,
+
+
+};
+
+
+
+
 
 
 
 
 // *************************** Capture image dimensions out of BMP**********
 
+
+const unsigned short Missile0rotated[] = {
+ 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+ 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+ 0x0000, 0x0000, 0xFFFF, 0xFFFF, 0xFFFF, 0x0000, 0x0000, 
+ 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+ 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+ 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+};
+
+
+
+
+
+
+const unsigned short Missile0rotatedempty[] = {
+ 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+ 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+ 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+ 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+ 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+ 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+
+};
+
+
+
+
+
+
+
+
 int main(void){
 	uint32_t index = 0;
+	uint8_t clear = 0;
 	
 	
 	DisableInterrupts();
@@ -284,12 +340,13 @@ int main(void){
   PortF_Init();
   PortE_Init();
 	DAC_Init();
-	Timer2_Init(0x08FF);
+	//Timer2_Init(0x08FF);
+	Timer2_Init(0xFFFF);
 	Systick_Init();
   Output_Init();
-	Timer0_Init(0xFFFFFF);
+	Timer0_Init(0x00FFFFFF);
 	ST7735_InitR(INITR_REDTAB);
-	Timer1_Init(0x0009FFFF);
+	Timer1_Init(0x000FFFFF);            //0x0009FFFF
 	
 	ST7735_SetCursor (1,0);
 	ST7735_OutString("Score: ");
@@ -298,7 +355,6 @@ int main(void){
 	
 	
 	while (1){
-	
 	while (index <16)
 	{
 		
@@ -315,6 +371,7 @@ int main(void){
 		}
 		
 		ST7735_DrawBitmap(ship.x, ship.y,ship.mappt[0],ship.w,ship.h);
+		ST7735_DrawBitmap(ship2.x, ship2.y,ship2.mappt[0],ship2.w,ship2.h);
 		
 		if (bullet.status == 1)
 		{
@@ -324,18 +381,58 @@ int main(void){
 		{
 			ST7735_DrawBitmap(bullet.x, bullet.y, bullet.mappt[1], bullet.w,bullet.h);
 		}
+		if (bullet2.status == 1)
+		{
+			ST7735_DrawBitmap(bullet2.x, bullet2.y, bullet.mappt[0], bullet2.w,bullet2.h);
+		}
+		else
+		{
+			ST7735_DrawBitmap(bullet2.x, bullet2.y, bullet2.mappt[1], bullet2.w,bullet.h);
+		}
+		
+			
 		
 		
 		
 		
 		ST7735_SetCursor(7,0);
 		LCD_OutDec(score);
+		if (score == 160)
+		{
+			
+			level = 2;
+			ST7735_FillScreen(0x0000); 
+			ST7735_SetCursor (6,6);
+			ST7735_OutString("Level 2");
+			level2flag = 1;
+			TIMER2_TAILR_R = 0xFFF;
+			TIMER2_CTL_R = 0x000001;
+			Delay100ms (10);
+			Timer0_Init(0x00920000);
+			Level2();
+
+
+
+			
+//			ST7735_FillScreen(0x0000); 
+//			ST7735_SetCursor (6,6);
+//			ST7735_OutString("You Won!");
+//			winflag = 1;
+//			TIMER2_TAILR_R = 0xFFFF;
+//			TIMER2_CTL_R = 0x000001;
+
+			
+			
+			
+		}
 		
 		
 		index++;
+		
 	
 	}
 		index = 0;
+		
 }
 }	
 	
@@ -345,7 +442,13 @@ void Gameover (void)
 	ST7735_FillScreen(0x0000); 
 	ST7735_SetCursor (6,6);
 	ST7735_OutString("Game Over!");
-	while (1) {};
+	gameoverflag = 1;
+	TIMER2_TAILR_R = 0x288F;
+	TIMER2_CTL_R = 0x0000001;
+	while (1) {
+		//TIMER2_TAILR_R = 0x08ff;
+		
+	}
 }	
 	
 	
@@ -378,9 +481,11 @@ void Gameover (void)
 // You can use this timer only if you learn how it works
 
 void Delay100ms(uint32_t count){uint32_t volatile time;
-  while(count>0){
+  while(count>0)
+		{
     time = 727240;  // 0.1sec at 80 MHz
-    while(time){
+    while(time)
+		{
 	  	time--;
     }
     count--;
